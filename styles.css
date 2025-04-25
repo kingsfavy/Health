@@ -17,6 +17,12 @@ body{
 }
 #read{
     display:none;
+color: rgba(0, 102, 153, 1);
+    padding:0 20px;
+}
+#read .sub-heading{
+    font-size:2em;
+    color: rgba(0, 102, 153, 1);
 }
 .wrapper{
     width:100%;
