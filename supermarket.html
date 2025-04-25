@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <div class="header-con" id="home">
+        <div class="desktop">
+            <div class="top">
+                <p class="tel">500 Terry Francine Street,  SF, CA 94158 </p>
+    
+                <div class="top-contents">
+                    <p class="tel">Tel: 123-456-7890</p>
+                    <p class="book mobile" onclick="window.location.href='/home'">BOOK NOW</p>
+    
+                    <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
+    
+                    <p onclick="openModal()" class="book">Login</p>
+                </div>
+            </div>
+            </div>
+
+        
+    <div class="wrapper">
+
+        <div class="header">
+            <div>
+            <h3 class="name">WellCare</h3>
+           
+    <div style="display:flex;justify-content:flex-start;align-items: center;gap:2rem;margin:20px 0;text-decoration: underline;cursor:pointer;color:#fff;">
+        <p onclick="window.location.href='index.html'">Pharmacy</p>
+        <p class="pharmacy" onclick="window.location.href='supermarket.html'">Supermarket</p>
+    </div>
+            </div>
+
+
+    <div style="display:flex;justify-content: space-between;align-items: center;">
+           <div class="desktop">
+                <ul>
+                    <a onclick="window.href.location='#home'"><li>Home</li></a>
+                    <a onclick="window.href.location='#about'"><li>About</li></a>
+                    <a onclick="window.href.location='#services'"><li>Services</li></a>
+                    <a onclick="window.href.location='/home'"><li>FAQ</li></a>
+                    <a onclick="window.href.location='/home'"><li>Contact</li></a>
+                    <div class="profile-icon">
+                        <img src="default.png" alt="profile picture" class="icon">
+                </div>
+                 </ul>
+                
+           </div>
+
+           <div class="mobile" id="nav">
+            <ul>
+                <div class="profile-icon">
+                    <img src="default.png" alt="pofile picture" class="icon">
+            </div>
+                <a onclick="window.location.href='#top'" class="navLinks"><li>Home</li></a>
+                
+                <a onclick="window.location.href='#about'" class="navLinks"><li>About</li></a>
+                
+                <a onclick="window.location.href='#services'" class="navLinks"><li>Services</li></a>
+                
+                <a onclick="window.location.href='/home'" class="navLinks"><li>FAQ</li></a>
+                
+                <a onclick="window.location.href='/home'" class="navLinks"><li>Contact</li></a>
+
+           
+             </ul>
+            
+       </div>
+        
+
+       <div class="ham mobile" onclick="ham()">
+                <hr class="hr" id="one">
+                <hr class="hr" id="two">
+                <hr class="hr" id="three">
+            </div>
+        </div>
+
+        </div>
+        <div class="mobile">
+                <div class="top">
+            <p class="tel">500 Terry Francine Street,  SF, CA 94158 </p>
+
+            <div class="top-contents">
+                <p class="tel">Tel: 123-456-7890</p>
+                <p class="book mobile" onclick="window.location.href='/home'">BOOK NOW</p>
+
+                <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
+
+                <p onclick="openModal()" class="book">Login</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <main id="mainContent">
+        
+    <div class="wrapper">
+            <div class="contents">
+                <h1 class="walk">YOUR EVERYDAY ESSENTIALS, JUST A STEP AWAY</h1>
+            </div>
+    </div>
+    <div class="wrapper">
+        <div class="contents">
+            <p class="age">FOR ADULTS & CHILDREN</p>
+        </div>
+</div>
+<div class="wrapper">
+    <div class="contents">
+        <p>Monday - Saturday: 7:00am – 7:30pm </p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="contents">
+        <p>Sunday: 7:00am – 4:30pm</p>
+    </div>
+</div>
+<div class="wrapper">
+   <button class="btn">Book Now</button>
+</div>
+<div class="space" id="about"></div>
+<div class="wrapper">
+    <div class="contents">
+        <p class="age">ABOUT US</p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="container">
+             <p>WellCare Pharmacy is a trusted provider of pharmaceutical services committed to delivering high-quality healthcare solutions with professionalism and integrity.
+
+            With a team of experienced pharmacists and healthcare professionals, we focus on precision, efficiency, and customer-centered care. Our mission is to ensure every patient receives accurate medication, expert guidance, and timely support — all within a secure and compliant environment.
+            
+            We offer a comprehensive range of pharmaceutical products, health consultations, and prescription management services tailored to the needs of individuals and families.
+            
+            At WellCare Pharmacy, we are dedicated to advancing community health and contributing to better outcomes through trusted pharmaceutical care.
+            
+            
+        </p>
+    </div>
+</div>
+
+<div class="wrapper">
+<div class="imgs">
+
+    <div class="flex">      
+        <div class="icons">
+            <img src="on-site.jpeg" alt="pofile picture" class="icon">
+            <div style="text-align: center;">
+            <p>Onsite Laboratory</p>
+        </div>
+    </div>
+    </div>
+    
+    <div class="flex">
+    <div class="icons">
+        <img src="open.jpeg" alt="pofile picture" class="icon">
+        <div style="text-align: center;">
+        <p>Open 7 days a week</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="flex">
+    <div class="icons">
+        <img src="appointment.jpeg" alt="pofile picture" class="icon">
+        <div style="text-align: center;">
+            <p>No appointment needed</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="flex">
+    <div class="icons">
+        <img src="short.jpeg" alt="pofile picture" class="icon">
+        <div style="text-align: center;">
+        <p>Short waiting times</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="flex">
+    <div class="icons">
+        <img src="accept.jpeg" alt="pofile picture" class="icon">
+        <div style="text-align: center;">
+        <p>Accepting all major insurance plans</p>
+    </div>
+    </div>
+    </div>
+
+</div>
+</div>
+</div>
+<br><br>
+<div class="space"></div>
+
+<div class="wrapper">
+    <button class="btn">Read More</button>
+ </div>
+
+ <div class="space" id="services"></div>
+<div class="wrapper">
+    <div class="contents">
+        <p class="age">SERVICES</p>
+    </div>
+
+</div>
+<div class="wrapper">
+    <div class="container">
+            <p>WellCare Pharmacy is a trusted provider of pharmaceutical services committed to delivering high-quality healthcare solutions with professionalism and integrity.
+
+            With a team of experienced pharmacists and healthcare professionals, we focus on precision, efficiency, and customer-centered care. Our mission is to ensure every patient receives accurate medication, expert guidance, and timely support — all within a secure and compliant environment.
+            
+            We offer a comprehensive range of pharmaceutical products, health consultations, and prescription management services tailored to the needs of individuals and families.
+            
+            At WellCare Pharmacy, we are dedicated to advancing community health and contributing to better outcomes through trusted pharmaceutical care.
+            
+            
+        </p>
+    </div>
+</div>
+<div class="space"></div>
+<div class="wrapper">
+    <div class="imgs">
+        <div class="flex">      
+            <div class="icons">
+                <img src="happiness.jpeg" alt="pofile picture" class="icon">
+                <div style="text-align: center;">
+                <p>Onsite Laboratory</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="flex">      
+            <div class="icons">
+                <img src="happiness.jpeg" alt="pofile picture" class="icon">
+                <div style="text-align: center;">
+                <p>Onsite Laboratory</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="flex">      
+            <div class="icons">
+                <img src="happiness.jpeg" alt="pofile picture" class="icon">
+                <div style="text-align: center;">
+                <p>Onsite Laboratory</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="flex">      
+            <div class="icons">
+                <img src="happiness.jpeg" alt="pofile picture" class="icon">
+                <div style="text-align: center;">
+                <p>Onsite Laboratory</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <br>
+      <p>Don't have an account? <a href="/register">Register here</a></p>
+      <br>
+      <p>Forgot your password? <a href="/reset-password">Reset it here</a></p>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
