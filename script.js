@@ -1,17 +1,6 @@
 
 function read(){
-document.getElementById("read").innerHTML = "Why Choose WellCare Pharmacy?
-Experienced Team: Our pharmacists and staff are trained professionals with a passion for healthcare and years of practical experience.
-
-Trusted Medications: We stock only certified, top-quality medications sourced from reputable manufacturers.
-
-Health Education: We believe informed patients make better health choices, so we provide resources and consultations to empower our clients.
-
-Timely Refills & Reminders: Never miss a dose — we offer prescription refill alerts and medication adherence support.
-
-Customised Services: From paediatric to geriatric care, we tailor solutions to suit every stage of life.
-
-Community Outreach: We regularly engage in health fairs, free screenings, and awareness campaigns to support our local community.";
+document.getElementById("read").style.display = "block";
 }
 
 
