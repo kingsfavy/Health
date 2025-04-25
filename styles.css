@@ -91,6 +91,7 @@ input{
     height:35px;
     border-radius: 8px;
     background: none;
+    border:none;
 }
 
 .ham{
@@ -158,7 +159,7 @@ main{
     z-index: 0;
 }
 .walk{
-    font-size: 3.5rem;
+    font-size: 3.5em;
     font-weight: bolder;
     color: rgba(0, 102, 153, 1);
 }
@@ -169,7 +170,7 @@ main{
 .contents .age{
     color:#fff;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2em;
     color: rgba(0, 102, 153, 1);
 }
 .contents p{
@@ -181,7 +182,7 @@ main{
     height:8rem;
 }
 .mini-space{
-    height:2rem;
+    height:4rem;
 }
 .container{
     width: 65%;
@@ -224,12 +225,11 @@ main{
     background-color: #fff;
     margin: 10% auto;
     padding: 30px;
-    width: 90%;
+    /* width: 90%; */
     max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     animation: fadeIn 0.3s ease;
-    text-align: center;
   }
   
   /* Form styling */
@@ -281,10 +281,30 @@ main{
     width:100%;
   }
   
-  
   /* Animation */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
   }
   
+  .footer, .copy{
+    width:100%;
+    height: auto;
+    background: rgba(0, 102, 153, 1);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color:#fff;
+    margin:0 20px;
+    gap:3rem;
+   padding: 20px;
+  }
+  .footer{
+    color: #fff;
+    background: rgba(0, 102, 153, 1);
+  }
+  .copy{
+    background: none;
+    color:rgba(0, 102, 153, 1);
+  }
