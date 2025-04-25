@@ -21,16 +21,67 @@ app.use(session({
   saveUninitialized: false
 }));
 
+
+const sessionMiddleware = session({
+  secret: crypto.randomBytes(32).toString('hex'),
+  resave: false,
+  saveUninitialized: false,
+});
+app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
+passport.use(new LocalStrategy(async (username, password, done) => {
+  try {
+    const user = await User.findOne({ username });
+    if (!user) return done(null, false, { message: 'Incorrect username.' });
+    
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return done(null, false, { message: 'Incorrect password.' });
+    
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
+passport.serializeUser((user, done) => done(null, user.username));
+passport.deserializeUser(async (username, done) => {
+  try {
+    const user = await User.findOne({ username });
+    done(null, user || false);
+  } catch (err) {
+    done(err);
+  }
 });
 
-passport.deserializeUser((id, done) => {
-  done(null, { id: 1, username, phone, orderId, userId, country: 'admin' });
+passport.deserializeUser(async (username, done) => {
+  try {
+    const user = await User.findOne({ username }, '-password'); // Exclude password field
+    done(null, user || false);
+  } catch (err) {
+    done(err);
+  }
 });
+
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect('/login');
+}
+
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'effiongkingsley1185@gmail.com',
+    pass: 'akhe stdf sqyr vhcu'
+  }
+});
+
+
+
+
 
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -52,6 +103,103 @@ passport.use(new LocalStrategy(
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'index.html'));
+});
+
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname,'public', 'signup.html'));
+});
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname,'public', 'login.html'));
+});
+
+app.get('/forgot-password', (req, res) => {
+  res.sendFile(path.join(__dirname,'public', 'forgot-password.html'));
+});
+
+app.post('/signup', async (req, res) => {
+  const { username, password, email, yourname } = req.body;
+
+  if (!username || !password || !email || !yourname) {
+    return res.status(400).json({ success: false, error: 'All fields are required' });
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const newUser = new User({ username, password: hashedPassword, email, yourname });
+
+  try {
+    await newUser.save();
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+
+app.post('/login', passport.authenticate('local'), (req, res) => {
+  res.json({ success: true, user: req.user.username });
+});
+
+
+app.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+ 
+      return res.status(404).json({ success: false, error: "Email not found:", email});
+    }
+
+    const secretCode = Math.floor(100000 + Math.random() * 900000).toString();
+    user.resetCode = secretCode;
+    user.resetCodeExpiry = Date.now() + 15 * 60 * 1000;
+    await user.save();
+
+    const mailOptions = {
+      from: '"vibe" <vibe@gmail.com>',
+      to: email,
+      subject: 'Password Reset Code',
+      text: `Your password reset code is: ${secretCode}, please dont share this code with anyone. It will expire in 15 minutes.`,
+      html: `<p>Your password reset code is: <strong>${secretCode}</strong>, please dont share this code with anyone.</p>
+      <p>It will expire in 15 minutes.</p>
+      <p>If you did not request this, please ignore this email.</p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.error("Error sending email:", error);
+        return res.status(500).json({ success: false, error: 'Check your internet connection and try again' });
+      }
+      res.json({ success: true, message: 'Reset code sent via email' });
+    });
+
+  } catch (error) {
+    console.error("Error in forgot-password route:", error);
+    res.status(500).json({ success: false, error: 'Something went wrong' });
+  }
+});
+
+
+
+app.post('/reset-password', async (req, res) => {
+  const { email, code, newPassword } = req.body;
+  const user = await User.findOne({ email });
+  
+  if (!user || user.resetCode !== code || Date.now() > user.resetCodeExpiry) {
+    return res.status(400).json({ success: false, error: 'Invalid or expired reset code' });
+  }
+
+  user.password = await bcrypt.hash(newPassword, 10);
+  user.resetCode = undefined;
+  user.resetCodeExpiry = undefined;
+  await user.save();
+
+  res.json({ success: true, message: 'Password reset successfully' });
+});
+
+// --- Protected HTTP API Routes ---
+app.get('/api/profile', ensureAuthenticated, (req, res) => {
+    res.json({ user: req.user });
 });
 
 // app.get('/supermarket', (req, res) => {
