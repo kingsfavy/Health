@@ -231,7 +231,7 @@ main{
   
   /* Modal box */
   .modal-content {
-    background-color: #fff;
+    background: none;
     margin: 10% auto;
     padding: 30px;
     /* width: 90%; */
