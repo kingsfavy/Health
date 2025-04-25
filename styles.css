@@ -308,3 +308,9 @@ main{
     background: none;
     color:rgba(0, 102, 153, 1);
   }
+.bottom{
+    width:100%;
+    position:relative;
+    bottom:0;
+    z-index:1001;
+}
