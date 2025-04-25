@@ -100,11 +100,7 @@ passport.use(new LocalStrategy(
   }
 ));  
 
-const user = {
-  username: '',
-  password: '',
-  email:''
-};
+const user = [];
 
 // Login route
 app.post('/login', (req, res) => {
