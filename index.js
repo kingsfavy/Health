@@ -134,22 +134,22 @@ app.get('/forgot-password', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'forgot-password.html'));
 });
 
-app.post('/signup', async (req, res) => {
+app.post('/signup', (req, res) => {
   const { username, password, email } = req.body;
 
   if (!username || !password || !email) {
     return res.status(400).json({ success: false, error: 'All fields are required' });
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ username, password: hashedPassword, email });
-
-  try {
-    await newUser.save();
-    res.json({ success: true });
-  } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+  // Check if user already exists
+  const existingUser = users.find(user => user.username === username || user.email === email);
+  if (existingUser) {
+    return res.status(409).json({ success: false, error: 'User already exists' });
   }
+
+  // Save new user
+  users.push({ username, password, email });
+  res.json({ success: true, message: 'User registered successfully' });
 });
 
 
