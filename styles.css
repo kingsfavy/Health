@@ -61,13 +61,17 @@ text-decoration: underline;
     border-radius: 100%;
     object-fit: cover;
 }
-.icons{
-    width:80px;
+.img{
+     width:80px;
     height: 80px;
+        object-fit:cover;
+}
+.icons{
+    width:100px;
+    height: 100px;
     color: rgb(9, 49, 119);
     font-size: 1.3em;
     font-weight: lighter;
-    object-fit:cover;
 }
 .header-con{
     width:100%;
