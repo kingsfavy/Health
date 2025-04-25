@@ -100,6 +100,23 @@ passport.use(new LocalStrategy(
   }
 ));  
 
+const user = {
+  username: '',
+  password: ''
+};
+
+// Login route
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === user.username && password === user.password) {
+    res.json({ message: 'Login successful', token: 'abc123' });
+  } else {
+    res.status(401).json({ message: 'Invalid credentials' });
+  }
+});
+
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'index.html'));
@@ -117,14 +134,14 @@ app.get('/forgot-password', (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
-  const { username, password, email, yourname } = req.body;
+  const { username, password, email } = req.body;
 
-  if (!username || !password || !email || !yourname) {
+  if (!username || !password || !email) {
     return res.status(400).json({ success: false, error: 'All fields are required' });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ username, password: hashedPassword, email, yourname });
+  const newUser = new User({ username, password: hashedPassword, email });
 
   try {
     await newUser.save();
