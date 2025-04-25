@@ -310,7 +310,7 @@ main{
   }
 .bottom{
     width:100%;
-    position:relative;
+    position:absolute;
     bottom:0;
-    z-index:1001;
+    z-index:2000;
 }
