@@ -240,7 +240,7 @@ main{
   }
   
   #loginForm input {
-    padding: 10px;
+    padding: 0 4%;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 6px;
