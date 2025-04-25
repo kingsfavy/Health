@@ -109,7 +109,7 @@ input{
     margin:6px 0;
 }
 
-.btn{
+.btn, .btn2{
     background-color: rgba(57, 192, 147, 0.886);
     border: none;
     padding: 1rem 2rem;
