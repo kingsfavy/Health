@@ -106,6 +106,7 @@ input{
     border: none;
     padding: 1rem 2rem;
     color:#fff;
+    border-radius:25px;
 }
 .btn:hover{
     border: 1px solid  rgba(57, 192, 147, 0.886);
