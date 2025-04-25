@@ -73,6 +73,7 @@ text-decoration: underline;
     position: fixed;
     z-index: 1000;
     background: #fff;
+    top:0;
 }
 
 .header, .inner-container, .top, .imgs{
