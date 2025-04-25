@@ -67,6 +67,7 @@ text-decoration: underline;
     color: rgb(9, 49, 119);
     font-size: 1.3em;
     font-weight: lighter;
+    object-fit:cover;
 }
 .header-con{
     width:100%;
