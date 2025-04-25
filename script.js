@@ -70,3 +70,4 @@ Timely Refills & Reminders: Never miss a dose — we offer prescription refill a
 Customised Services: From paediatric to geriatric care, we tailor solutions to suit every stage of life.
 
 Community Outreach: We regularly engage in health fairs, free screenings, and awareness campaigns to support our local community.";
+}
