@@ -1,0 +1,282 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    width:100%;
+    height:100vh;
+}
+
+.wrapper, .inner-container, .flex{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width:100%;
+    padding:0.5rem 0;
+}
+
+.header{
+background-color: rgb(9, 49, 119);
+padding: 1rem 1rem;
+}
+.header, .top{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top{
+    margin:1.2% 5%;
+}
+.top-contents{
+    display:flex;
+    gap:2rem;
+    padding:0 5% 0 0;
+}
+.book{
+color: rgba(57, 192, 147, 0.886);  
+font-weight: bold;
+font-size: 1.2em;
+cursor:pointer;
+text-decoration: underline;
+}
+.tel{
+    color: rgb(9, 49, 119);
+}
+.profile-icon{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.icon{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.icons{
+    width:100px;
+    height: 100px;
+    color: rgb(9, 49, 119);
+    font-size: 1.3em;
+    font-weight: lighter;
+}
+.header-con{
+    width:100%;
+    position: fixed;
+    z-index: 1000;
+    background: #fff;
+}
+
+.header, .inner-container, .top, .imgs{
+    width:95%;
+    height:auto;
+}
+
+input{
+    width:60%;
+    height:35px;
+    border-radius: 8px;
+    background: none;
+}
+
+.ham{
+    width:40px;
+    height: auto;
+    cursor: pointer;
+}
+.hr{
+    width:40px;
+    height:5px;
+    border: none;
+    border-radius: 25px;
+    background: #fff;
+    margin:6px 0;
+}
+
+.btn{
+    background-color: rgba(57, 192, 147, 0.886);
+    border: none;
+    padding: 1rem 2rem;
+    color:#fff;
+}
+.btn:hover{
+    border: 1px solid  rgba(57, 192, 147, 0.886);
+    cursor: pointer;
+    background: none;
+    color:rgba(57, 192, 147, 0.886);
+    font-size: 1em;
+    font-weight: bolder;
+}
+.pharmacy{
+    color: rgba(57, 192, 147, 0.886);
+    text-decoration: underline;
+}
+.name{
+    font-size: 1.9em;
+    color:#fff;
+    font-weight: lighter;
+}
+
+ul{
+    display:flex;
+    gap:2rem;
+    list-style: none;
+    font-size: 1em;
+    font-weight: lighter;
+   text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: rgba(57, 192, 147, 0.886);
+    cursor: pointer;
+}
+.nav{
+    display:flex;
+}
+main{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    margin-top:17rem;
+    z-index: 0;
+}
+.walk{
+    font-size: 3.5rem;
+    font-weight: bolder;
+    color: rgb(9, 49, 119);
+}
+.contents{
+    width:50%;
+    text-align: center;
+}
+.contents .age{
+    color:#fff;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(9, 49, 119);
+}
+.contents p{
+    font-weight: bolder;
+    font-size: 18px;
+    color: rgb(9, 49, 119);
+}
+.space{
+    height:8rem;
+}
+.mini-space{
+    height:2rem;
+}
+.container{
+    width: 65%;
+    text-align: center;
+    font-size: 1.4em;
+    color: rgb(9, 49, 119);
+}
+.imgs{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height:auto;
+    gap:5.5rem;
+}
+.services{
+    font-weight:  larger;
+    font-size: 1.5rem;
+    font-family: arial;
+}
+.sub-heading{
+    font-weight: larger;
+}
+#nav{
+    display:none;
+}
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Modal box */
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+    text-align: center;
+  }
+  
+  /* Form styling */
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #loginForm input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  #loginForm button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #loginForm button:hover {
+    background-color: #005f7a;
+  }
+  
+  /* Close button */
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  /* Blur effect */
+.blur {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+  }
+  #mainContent{
+    width:100%;
+  }
+  
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
