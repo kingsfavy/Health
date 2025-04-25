@@ -102,7 +102,8 @@ passport.use(new LocalStrategy(
 
 const user = {
   username: '',
-  password: ''
+  password: '',
+  email:''
 };
 
 // Login route
