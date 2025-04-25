@@ -83,7 +83,7 @@ text-decoration: underline;
 }
 
 input{
-    width:60%;
+    width:93%;
     height:35px;
     border-radius: 8px;
     background: none;
@@ -123,7 +123,7 @@ input{
     text-decoration: underline;
 }
 .name{
-    font-size: 1.9em;
+    font-size: 2.1em;
     color:#fff;
     font-weight: larger;
 }
