@@ -54,9 +54,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
 
-app.get('/supermarket', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'supermarket.html'));
-});
+// app.get('/supermarket', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'supermarket.html'));
+// });
 
 
 // Start the server
