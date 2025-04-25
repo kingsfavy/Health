@@ -16,7 +16,6 @@
   <button type="submit">Sign Up</button>
 </form>
 
-
 <script>
 document.getElementById('signupForm').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -35,7 +34,7 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
     const data = await response.json();
 
     if (response.ok && data.success) {
-      alert('Signup successful!');
+      alert(data.message);
     } else {
       alert('Signup failed: ' + data.error);
     }
