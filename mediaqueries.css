@@ -26,6 +26,9 @@
     main{
         margin-top: 15rem;
     }
+    .footer{
+        margin:0;
+    }
     ul{
         display:flex;
         ;
