@@ -62,6 +62,9 @@
     .contents p{
         letter-spacing: 2px;
     }
+    main{
+        padding-top:20rem;
+    }
 }
 
 @media(width:768px){
