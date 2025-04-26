@@ -104,7 +104,7 @@ text-decoration: underline;
     position: fixed;
     z-index: 1000;
    background: #fff;
-    top:0;
+    
 }
 
 .header, .inner-container, .top, .imgs{
@@ -167,7 +167,7 @@ ul{
     font-size: 1em;
     font-weight: lighter;
    text-decoration: none;
-    color: #fff;
+    color: rgba(0, 102, 153, 1);
 }
 a:hover{
     text-decoration: underline;
@@ -175,6 +175,7 @@ a:hover{
     color: rgba(57, 192, 147, 0.886);
     cursor: pointer;
 }
+
 .nav{
     display:flex;
 }
@@ -234,6 +235,9 @@ main{
 }
 #nav{
     display:none;
+}
+a{
+    color: rgba(0, 102, 153, 1);
 }
 /* Modal container */
 .modal {
