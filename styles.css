@@ -138,6 +138,7 @@ text-decoration: underline;
 }
 #bookingResult{
     font-weight:larger;
+    transition: opacity 0.5s, transform 0.3s;
 }
 .header-con{
     width:100%;
