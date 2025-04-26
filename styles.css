@@ -87,6 +87,7 @@ text-decoration: underline;
     background-repeat: no-repeat; /* Prevents the image from repeating */
     min-height: 100vh; /* Optional: makes sure it covers the full screen height */
     width:100%;
+    padding:1rem 0;
     display:flex;
     justify-content:center;
     align-items:crnter;
