@@ -136,6 +136,9 @@ text-decoration: underline;
     font-size: 21px;
     font-weight: lighter;
 }
+#bookingResult{
+    font-weight:larger;
+}
 .header-con{
     width:100%;
     position: fixed;
