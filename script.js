@@ -1,4 +1,56 @@
 
+// Select the button and the container
+const showCalendarBtn = document.getElementById('showCalendarBtn');
+const calendarContainer = document.getElementById('calendarContainer');
+
+// When the button is clicked
+showCalendarBtn.addEventListener('click', function() {
+    calendarContainer.innerHTML = ''; // Clear previous content
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth(); // 0-indexed (0 = January)
+
+    // Get number of days in this month
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Create a calendar title
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const title = document.createElement('h2');
+    title.textContent = `${monthNames[month]} ${year}`;
+    calendarContainer.appendChild(title);
+
+    // Create a div for the days
+    const daysDiv = document.createElement('div');
+    daysDiv.style.display = 'flex';
+    daysDiv.style.flexWrap = 'wrap';
+    daysDiv.style.maxWidth = '300px';
+
+    // Create buttons for each day
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayBtn = document.createElement('button');
+        dayBtn.textContent = day;
+        dayBtn.style.width = '40px';
+        dayBtn.style.height = '40px';
+        dayBtn.style.margin = '5px';
+        dayBtn.style.cursor = 'pointer';
+
+        // Add click event to each day
+        dayBtn.addEventListener('click', function() {
+            alert(`You booked: ${monthNames[month]} ${day}, ${year}`);
+        });
+
+        daysDiv.appendChild(dayBtn);
+    }
+
+    calendarContainer.appendChild(daysDiv);
+});
+
+
+
 function read(){
 document.getElementById("read").style.display = "block";
   document.getElementById("btn").style.display = "none";
@@ -98,55 +150,4 @@ setInterval(moveToNextSlide, 5000);
 // Adjust if window resizes
 window.addEventListener('resize', () => {
     slideWidth = images[0].clientWidth;
-});
-
-
-// Select the button and the container
-const showCalendarBtn = document.getElementById('showCalendarBtn');
-const calendarContainer = document.getElementById('calendarContainer');
-
-// When the button is clicked
-showCalendarBtn.addEventListener('click', function() {
-    calendarContainer.innerHTML = ''; // Clear previous content
-
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth(); // 0-indexed (0 = January)
-
-    // Get number of days in this month
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    // Create a calendar title
-    const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-    const title = document.createElement('h2');
-    title.textContent = `${monthNames[month]} ${year}`;
-    calendarContainer.appendChild(title);
-
-    // Create a div for the days
-    const daysDiv = document.createElement('div');
-    daysDiv.style.display = 'flex';
-    daysDiv.style.flexWrap = 'wrap';
-    daysDiv.style.maxWidth = '300px';
-
-    // Create buttons for each day
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayBtn = document.createElement('button');
-        dayBtn.textContent = day;
-        dayBtn.style.width = '40px';
-        dayBtn.style.height = '40px';
-        dayBtn.style.margin = '5px';
-        dayBtn.style.cursor = 'pointer';
-
-        // Add click event to each day
-        dayBtn.addEventListener('click', function() {
-            alert(`You booked: ${monthNames[month]} ${day}, ${year}`);
-        });
-
-        daysDiv.appendChild(dayBtn);
-    }
-
-    calendarContainer.appendChild(daysDiv);
 });
