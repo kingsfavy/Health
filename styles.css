@@ -23,12 +23,12 @@ img{
 }
 #read{
     display:none;
-color: #000;
+color: black;
     padding:0 20px;
 }
 #read .sub-heading{
     font-size:2em;
-    color: #000;
+    color: black;
 }
 .wrapper{
     width:100%;
@@ -51,7 +51,7 @@ color: #000;
 .header{
 background-color: #fff;
 padding: 1rem 1rem;
-color:#000;
+color:black;
 }
 .header, .top{
     display:flex;
@@ -61,7 +61,7 @@ color:#000;
 }
 .top{
     margin:1.2% 5%;
-    color:#000;
+    color:black;
 }
 .top-contents{
     display:flex;
@@ -77,7 +77,7 @@ cursor:pointer;
 text-decoration: underline;
 }
 .tel{
-    color: #000000;
+    color: black;
 }
 .profile-icon{
     width:50px;
@@ -192,7 +192,7 @@ input{
     font-weight: bolder;
 }
 .pharmacy{
-    color: rgba(152, 199, 90, 1);
+    color:black;
     text-decoration: underline;
 }
 .name{
@@ -209,7 +209,7 @@ ul{
     font-size: 1em;
     font-weight: bold;
    text-decoration: none;
-    color: #000;
+    color: black;
 }
 a:hover{
     text-decoration: underline;
@@ -258,10 +258,10 @@ main{
 .walk{
     font-size: 3.5em;
     font-weight: bolder;
-    color: #000;
+    color: black;
 }
 .super{
-      color: #000;
+      color: blsck;;
 }
 .contents{
     width:50%;
@@ -276,7 +276,7 @@ main{
 .contents p{
     font-weight: bolder;
     font-size: 18px;
-    color: #000;
+    color: black;
 }
 .space{
     height:8rem;
@@ -288,7 +288,7 @@ main{
     width: 65%;
     text-align: center;
     font-size: 1.4em;
-    color: #000;
+    color: black;
 }
 .imgs{
     display:flex;
@@ -309,7 +309,7 @@ main{
     display:none;
 }
 a{
-    color: #000;
+    color: black;
 }
 /* Modal container */
 .modal {
