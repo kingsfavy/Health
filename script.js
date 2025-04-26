@@ -38,8 +38,9 @@ showCalendarBtn.addEventListener('click', function() {
         dayBtn.style.margin = '5px';
         dayBtn.style.cursor = 'pointer';
         dayBtn.style.backgroundColor = '#2E5F3C';
-        dayBtn.style.border = 'none';
+
         dayBtn.style.color = '#ffffff';
+        dayBtn.style.borderRadius = '50px';
 
         // When a date is clicked
         dayBtn.addEventListener('click', function() {
