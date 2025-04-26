@@ -8,8 +8,14 @@ import crypto from 'crypto';
 import bodyParser from 'body-parser';
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt.js'
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+
+const app = express();
+const server = http.createServer(app);
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -65,11 +71,32 @@ passport.deserializeUser(async (username, done) => {
 });
 
 
+
+
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
 }
 
+
+const uri = "mongodb+srv://kingsley1185:22445131k@cluster0.zveirgt.mongodb.net/vibe?retryWrites=true&w=majority";
+const clientOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+    
+};
+
+async function run() {
+  try {
+    await mongoose.connect(uri, clientOptions);
+    console.log(" Connected to MongoDB successfully!");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+    process.exit(1);
+  }
+}
+
+run();
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -79,9 +106,21 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    match: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email format']
+  },
+  yourname: { type: String, required: false },
+  password: { type: String, required: true },
+  resetCode: String,
+  resetCodeExpiry: Date
+}, { timestamps: true });
 
-
-
+const User = mongoose.model('User', userSchema);
 
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -100,20 +139,6 @@ passport.use(new LocalStrategy(
   }
 ));  
 
-const user = [];
-
-// Login route
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-
-  if (username === user.username && password === user.password) {
-    res.json({ message: 'Login successful', token: 'abc123' });
-  } else {
-    res.status(401).json({ message: 'Invalid credentials' });
-  }
-});
-
-
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'index.html'));
@@ -122,36 +147,36 @@ app.get('/', (req, res) => {
 app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'signup.html'));
 });
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname,'public', 'login.html'));
-});
+
 
 app.get('/forgot-password', (req, res) => {
   res.sendFile(path.join(__dirname,'public', 'forgot-password.html'));
 });
 
-app.post('/signup', (req, res) => {
-  const { username, password, email } = req.body;
+app.post('/signup', async (req, res) => {
+  const { username, password, email, yourname } = req.body;
 
-  if (!username || !password || !email) {
+  if (!username || !password || !email || !yourname) {
     return res.status(400).json({ success: false, error: 'All fields are required' });
   }
 
-  // Check if user already exists
-  const existingUser = users.find(user => user.username === username || user.email === email);
-  if (existingUser) {
-    return res.status(409).json({ success: false, error: 'User already exists' });
-  }
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const newUser = new User({ username, password: hashedPassword, email, yourname });
 
-  // Save new user
-  users.push({ username, password, email });
-  res.json({ success: true, message: 'User registered successfully' });
+  try {
+    await newUser.save();
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 
 app.post('/login', passport.authenticate('local'), (req, res) => {
   res.json({ success: true, user: req.user.username });
 });
+
+
 
 
 app.post('/forgot-password', async (req, res) => {
@@ -215,10 +240,6 @@ app.post('/reset-password', async (req, res) => {
 app.get('/api/profile', ensureAuthenticated, (req, res) => {
     res.json({ user: req.user });
 });
-
-// app.get('/supermarket', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public', 'supermarket.html'));
-// });
 
 
 // Start the server
