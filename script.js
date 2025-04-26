@@ -37,7 +37,7 @@ showCalendarBtn.addEventListener('click', function() {
         dayBtn.style.height = '40px';
         dayBtn.style.margin = '5px';
         dayBtn.style.cursor = 'pointer';
-        dayBtn.style.backgroundColor = 'rgba(35, 84, 51, 1)';
+        dayBtn.style.backgroundColor = '#235433';
         dayBtn.style.border = 'none';
         dayBtn.style.color = '#ffffff';
 
