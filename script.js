@@ -1,83 +1,3 @@
-
-const showCalendarBtn = document.getElementById('showCalendarBtn');
-const calendarContainer = document.getElementById('calendarContainer');
-const bookingResult = document.getElementById('bookingResult');
-
-// When the button is clicked
-showCalendarBtn.addEventListener('click', function() {
-    calendarContainer.innerHTML = ''; // Clear previous calendar if any
-
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth(); // January = 0
-
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    // Month names
-    const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    // Title
-    const title = document.createElement('h2');
-    title.textContent = `${monthNames[month]} ${year}`;
-    calendarContainer.appendChild(title);
-
-    // Days container
-    const daysDiv = document.createElement('div');
-    daysDiv.style.display = 'flex';
-    daysDiv.style.flexWrap = 'wrap';
-    daysDiv.style.maxWidth = '300px';
-
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayBtn = document.createElement('button');
-        dayBtn.textContent = day;
-        dayBtn.style.width = '40px';
-        dayBtn.style.height = '40px';
-        dayBtn.style.margin = '5px';
-        dayBtn.style.cursor = 'pointer';
-        dayBtn.style.backgroundColor = '#2E5F3C';
-
-        dayBtn.style.color = '#ffffff';
-        dayBtn.style.borderRadius = '50px';
-
-        // When a date is clicked
-        dayBtn.addEventListener('click', function() {
-            const selectedDate = `${monthNames[month]} ${day}, ${year}`;
-
-            // Animate: fade out and shrink
-            bookingResult.style.opacity = '0';
-            bookingResult.style.transform = 'scale(0.8)';
-
-            setTimeout(() => {
-                // Update booking result
-                bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
-                
-                // Animate: fade in and bounce back
-                bookingResult.style.opacity = '1';
-                bookingResult.style.transform = 'scale(1.1)';
-
-                // After short delay, return to normal size
-                setTimeout(() => {
-                    bookingResult.style.transform = 'scale(1)';
-                }, 300);
-
-            }, 300); // Wait before changing text and starting pop
-
-            // Remove the calendar
-            calendarContainer.innerHTML = '';
-        });
-
-        daysDiv.appendChild(dayBtn);
-    }
-
-    calendarContainer.appendChild(daysDiv);
-});
-
-
-
-
 function read(){
 document.getElementById("read").style.display = "block";
   document.getElementById("btn").style.display = "none";
@@ -173,6 +93,83 @@ function moveToNextSlide() {
 
 // Move every 3 seconds
 setInterval(moveToNextSlide, 5000);
+
+const showCalendarBtn = document.getElementById('showCalendarBtn');
+const calendarContainer = document.getElementById('calendarContainer');
+const bookingResult = document.getElementById('bookingResult');
+
+// When the button is clicked
+showCalendarBtn.addEventListener('click', function() {
+    calendarContainer.innerHTML = ''; // Clear previous calendar if any
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth(); // January = 0
+
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Month names
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    // Title
+    const title = document.createElement('h2');
+    title.textContent = `${monthNames[month]} ${year}`;
+    calendarContainer.appendChild(title);
+
+    // Days container
+    const daysDiv = document.createElement('div');
+    daysDiv.style.display = 'flex';
+    daysDiv.style.flexWrap = 'wrap';
+    daysDiv.style.maxWidth = '300px';
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayBtn = document.createElement('button');
+        dayBtn.textContent = day;
+        dayBtn.style.width = '40px';
+        dayBtn.style.height = '40px';
+        dayBtn.style.margin = '5px';
+        dayBtn.style.cursor = 'pointer';
+        dayBtn.style.backgroundColor = '#2E5F3C';
+
+        dayBtn.style.color = '#ffffff';
+        dayBtn.style.borderRadius = '50px';
+
+        // When a date is clicked
+        dayBtn.addEventListener('click', function() {
+            const selectedDate = `${monthNames[month]} ${day}, ${year}`;
+
+            // Animate: fade out and shrink
+            bookingResult.style.opacity = '0';
+            bookingResult.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+                // Update booking result
+                bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
+                
+                // Animate: fade in and bounce back
+                bookingResult.style.opacity = '1';
+                bookingResult.style.transform = 'scale(1.1)';
+
+                // After short delay, return to normal size
+                setTimeout(() => {
+                    bookingResult.style.transform = 'scale(1)';
+                }, 300);
+
+            }, 300); // Wait before changing text and starting pop
+
+            // Remove the calendar
+            calendarContainer.innerHTML = '';
+        });
+
+        daysDiv.appendChild(dayBtn);
+    }
+
+    calendarContainer.appendChild(daysDiv);
+});
+
 
 // Adjust if window resizes
 window.addEventListener('resize', () => {
