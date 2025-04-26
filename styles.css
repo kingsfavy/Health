@@ -94,7 +94,7 @@ text-decoration: underline;
     display:flex;
     justify-content:center;
     align-items:center;
-    opacity:0.5;
+ 
 }
 
 .bg-bg {
@@ -104,7 +104,7 @@ text-decoration: underline;
     background-repeat: no-repeat; /* Prevents the image from repeating */
     min-height: 100vh; /* Optional: makes sure it covers the full screen height */
     width:100%;
-    opacity:0.5;
+ 
     padding:1rem 0;
     display:flex;
     justify-content:center;
