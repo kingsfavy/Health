@@ -350,8 +350,8 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
       <form id="loginForm">
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
+        <input type="text" placeholder="Username" name="yourname" required />
+        <input type="password" placeholder="Password" name="password" required />
         <button type="submit">Login</button>
       </form>
       <br>
@@ -364,31 +364,34 @@
 
     <script src="script.js"></script>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
+  const formData = new FormData(e.target);
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
 
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+  const res = await fetch('/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
 
-  try {
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    });
+  const result = await res.json();
 
-    const data = await response.json();
+  if (result.success) {
 
-    if (response.ok) {
-      alert(data.message); // Login successful
+    // Basic device detection
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      alert("logged in sucessfuly);
     } else {
-      alert(data.message); // Invalid credentials
+       alert("logged in sucessfuly);
     }
-  } catch (error) {
-    alert('Error logging in');
+  } else {
+    alert('Login failed');
   }
 });
-</sc
+
     </script>
 </body>
 </html>
