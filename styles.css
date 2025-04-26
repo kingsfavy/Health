@@ -195,6 +195,9 @@ main{
     font-weight: bolder;
     color: rgba(0, 102, 153, 1);
 }
+.super{
+      color: rgba(0, 102, 153, 1);
+}
 .contents{
     width:50%;
     text-align: center;
