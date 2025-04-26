@@ -99,3 +99,22 @@ setInterval(moveToNextSlide, 5000);
 window.addEventListener('resize', () => {
     slideWidth = images[0].clientWidth;
 });
+
+// Your carousel code first...
+
+// Now dark mode based on time with JS only
+function enableDarkModeJSOnly() {
+    const currentHour = new Date().getHours();
+
+    if (currentHour >= 18) { // If it's 6PM or later
+        document.body.style.backgroundColor = "#000000"; // Dark background
+        
+    } else {
+        document.body.style.backgroundColor = "#ffffff"; // Light background
+        
+    }
+}
+
+// Run when page loads
+enableDarkModeJSOnly();
+
