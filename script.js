@@ -1,5 +1,4 @@
 
-// Select elements
 const showCalendarBtn = document.getElementById('showCalendarBtn');
 const calendarContainer = document.getElementById('calendarContainer');
 const bookingResult = document.getElementById('bookingResult');
@@ -43,8 +42,24 @@ showCalendarBtn.addEventListener('click', function() {
         dayBtn.addEventListener('click', function() {
             const selectedDate = `${monthNames[month]} ${day}, ${year}`;
 
-            // Display the selected date
-            bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
+            // Animate: fade out and shrink
+            bookingResult.style.opacity = '0';
+            bookingResult.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+                // Update booking result
+                bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
+                
+                // Animate: fade in and bounce back
+                bookingResult.style.opacity = '1';
+                bookingResult.style.transform = 'scale(1.1)';
+
+                // After short delay, return to normal size
+                setTimeout(() => {
+                    bookingResult.style.transform = 'scale(1)';
+                }, 300);
+
+            }, 300); // Wait before changing text and starting pop
 
             // Remove the calendar
             calendarContainer.innerHTML = '';
