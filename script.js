@@ -3,6 +3,8 @@ document.getElementById("read").style.display = "block";
   document.getElementById("btn").style.display = "none";
 }
 
+const year = new Date().getFullYear();
+document.getElementById("year").innerHTML = year;
 
 let isMenuOpen = false;
 
