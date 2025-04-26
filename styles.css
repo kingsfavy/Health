@@ -77,7 +77,7 @@ cursor:pointer;
 text-decoration: underline;
 }
 .tel{
-    color: rgba(0, 102, 153, 1);
+    color: #000000;
 }
 .profile-icon{
     width:50px;
@@ -146,6 +146,7 @@ text-decoration: underline;
     z-index: 1000;
    background: #fff;
     
+    
 }
 
 .header, .inner-container, .top, .imgs{
@@ -208,7 +209,7 @@ ul{
     font-size: 1em;
     font-weight: bold;
    text-decoration: none;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 a:hover{
     text-decoration: underline;
@@ -257,10 +258,10 @@ main{
 .walk{
     font-size: 3.5em;
     font-weight: bolder;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 .super{
-      color: rgba(0, 102, 153, 1);
+      color: #000;
 }
 .contents{
     width:50%;
@@ -270,12 +271,12 @@ main{
     color:#fff;
     font-weight: bold;
     font-size: 2em;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 .contents p{
     font-weight: bolder;
     font-size: 18px;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 .space{
     height:8rem;
@@ -287,7 +288,7 @@ main{
     width: 65%;
     text-align: center;
     font-size: 1.4em;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 .imgs{
     display:flex;
@@ -308,7 +309,7 @@ main{
     display:none;
 }
 a{
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 /* Modal container */
 .modal {
@@ -393,7 +394,7 @@ a{
   .footer, .copy{
     width:100%;
     height: auto;
-    background: rgba(0, 102, 153, 1);
+    background: rgba(35, 84, 51, 1);
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -405,11 +406,11 @@ a{
   }
   .footer{
     color: #fff;
-    background: rgba(0, 102, 153, 1);
+    background: rgba(35, 84, 51, 1);
   }
   .copy{
     background: none;
-    color:rgba(0, 102, 153, 1);
+    color:rgba(35, 84, 51, 1);
   }
 .bottom{
     width:100%;
