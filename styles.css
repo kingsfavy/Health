@@ -209,7 +209,7 @@ ul{
     font-size: 1em;
     font-weight: bold;
    text-decoration: none;
-    color: black;
+    color: rgba(255, 255, 255, 1);
 }
 a:hover{
     text-decoration: underline;
@@ -271,7 +271,7 @@ main{
     color:#fff;
     font-weight: bold;
     font-size: 2em;
-    color: #000;
+    color: rgba(255, 255, 255, 1);
 }
 .contents p{
     font-weight: bolder;
