@@ -23,12 +23,12 @@ img{
 }
 #read{
     display:none;
-color: rgba(0, 102, 153, 1);
+color: #000;
     padding:0 20px;
 }
 #read .sub-heading{
     font-size:2em;
-    color: rgba(0, 102, 153, 1);
+    color: #000;
 }
 .wrapper{
     width:100%;
@@ -51,7 +51,7 @@ color: rgba(0, 102, 153, 1);
 .header{
 background-color: #fff;
 padding: 1rem 1rem;
-
+color:#000;
 }
 .header, .top{
     display:flex;
