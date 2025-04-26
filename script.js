@@ -67,3 +67,20 @@ function openModal() {
     }
   }
 
+const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+
+let index = 0;
+const totalImages = images.length;
+
+function nextSlide() {
+    index++;
+    if (index >= totalImages) {
+        index = 0;
+    }
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Change slide every 3 seconds
+setInterval(nextSlide, 3000);
+
