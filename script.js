@@ -12,7 +12,7 @@ function ham() {
   const two = document.getElementById('two');
   const three = document.getElementById('three');
   const nav = document.getElementById('nav');
-  const blur= document.getElementById('mainContent');
+
 
   if (!isMenuOpen) {
     // Open menu - hamburger to X
@@ -22,7 +22,7 @@ function ham() {
     three.style.transform = "rotate(-45deg)";
     three.style.margin = "0";
     nav.style.display = "block";
-    blur.style.filter="blur(5px)";
+    document.getElementById("mainContent").classList.add("blur");
   } else {
     // Close menu - X to hamburger
     one.style.transform = "rotate(0)";
@@ -32,7 +32,7 @@ function ham() {
     three.style.transform = "rotate(0)";
     three.style.margin = "6px 0";
     nav.style.display = "none";
-     blur.style.filter="blur(0px)";
+    document.getElementById("mainContent").classList.remove("blur");
   }
 
   one.style.transitionDuration = "0.4s";
