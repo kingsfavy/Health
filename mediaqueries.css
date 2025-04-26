@@ -17,9 +17,8 @@
     .walk{
         font-size: 2rem;
     }
-    .bg{
-        height:300px;
-        padding:50px 0;
+    .bg-inner{
+       margin-top:1.2rem;
     }
     .contents{
         width:70%;
