@@ -1,35 +1,36 @@
 
-// Select the button and the container
+// Select elements
 const showCalendarBtn = document.getElementById('showCalendarBtn');
 const calendarContainer = document.getElementById('calendarContainer');
+const bookingResult = document.getElementById('bookingResult');
 
 // When the button is clicked
 showCalendarBtn.addEventListener('click', function() {
-    calendarContainer.innerHTML = ''; // Clear previous content
+    calendarContainer.innerHTML = ''; // Clear previous calendar if any
 
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth(); // 0-indexed (0 = January)
+    const month = today.getMonth(); // January = 0
 
-    // Get number of days in this month
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    // Create a calendar title
+    // Month names
     const monthNames = [
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
+
+    // Title
     const title = document.createElement('h2');
     title.textContent = `${monthNames[month]} ${year}`;
     calendarContainer.appendChild(title);
 
-    // Create a div for the days
+    // Days container
     const daysDiv = document.createElement('div');
     daysDiv.style.display = 'flex';
     daysDiv.style.flexWrap = 'wrap';
     daysDiv.style.maxWidth = '300px';
 
-    // Create buttons for each day
     for (let day = 1; day <= daysInMonth; day++) {
         const dayBtn = document.createElement('button');
         dayBtn.textContent = day;
@@ -38,9 +39,15 @@ showCalendarBtn.addEventListener('click', function() {
         dayBtn.style.margin = '5px';
         dayBtn.style.cursor = 'pointer';
 
-        // Add click event to each day
+        // When a date is clicked
         dayBtn.addEventListener('click', function() {
-            alert(`You booked: ${monthNames[month]} ${day}, ${year}`);
+            const selectedDate = `${monthNames[month]} ${day}, ${year}`;
+
+            // Display the selected date
+            bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
+
+            // Remove the calendar
+            calendarContainer.innerHTML = '';
         });
 
         daysDiv.appendChild(dayBtn);
@@ -48,6 +55,7 @@ showCalendarBtn.addEventListener('click', function() {
 
     calendarContainer.appendChild(daysDiv);
 });
+
 
 
 
