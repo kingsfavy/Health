@@ -1,11 +1,13 @@
 *{
     padding:0;
     margin:0;
+    border-sizing:border-box;
 }
 
-body{
+body,html{
     width:100%;
     height:100vh;
+    overflow-x:hidden;
   /*  background: rgba(242, 255, 252, 1);*/
     background:rgba(255, 255, 255, 1);
 }
@@ -220,7 +222,7 @@ a:hover{
 
 .slides {
     display: flex;
-    width:200%; /* 100% * number of images (3 images here) */
+    width:300%; /* 100% * number of images (3 images here) */
     height: 100%;
     
     transition: transform 2s ease-in-out;
@@ -230,7 +232,7 @@ a:hover{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin:0 4%;
+
 }
 
 .social-icons{
