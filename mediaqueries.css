@@ -17,6 +17,9 @@
     .walk{
         font-size: 2rem;
     }
+    .bg{
+        min-height:60vh;
+    }
     .contents{
         width:70%;
     }
