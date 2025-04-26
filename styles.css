@@ -92,6 +92,19 @@ text-decoration: underline;
     justify-content:center;
     align-items:crnter;
 }
+
+.bg-bg {
+    background-image: url('happiness.jpeg'); /* Replace with your image path */
+    background-size: cover; /* This makes the image cover the entire div */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh; /* Optional: makes sure it covers the full screen height */
+    width:100%;
+    padding:1rem 0;
+    display:flex;
+    justify-content:center;
+    align-items:crnter;
+}
 .bg-inner{
     width:100%;
     height:auto;
