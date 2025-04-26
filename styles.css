@@ -81,7 +81,7 @@ text-decoration: underline;
     cursor: pointer;
 }
 .bg {
-    background-image: url('your-image.jpg'); /* Replace with your image path */
+    background-image: url('happiness.jpeg'); /* Replace with your image path */
     background-size: cover; /* This makes the image cover the entire div */
     background-position: center; /* This centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
