@@ -33,7 +33,6 @@
              <div>
                     <div class="logo-con">
                         <img src="logo.jpeg" alt="logo" class="logo-img">
-              
                     </div>
             
                   
@@ -63,8 +62,11 @@
 
            <div class="mobile" id="nav">
             <ul>
+                <div>
                 <div class="profile-icon">
                     <img src="default.png" alt="profile picture" class="icon">
+                    <p id="showNme"></p>
+                </div>
             </div>
                 <a onclick="window.location.href='#top'" class="navLinks"><li>Home</li></a>
                 
@@ -350,7 +352,7 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
       <form id="loginForm">
-        <input type="text" placeholder="Username" name="yourname" required />
+        <input type="text" placeholder="Username" id ="name" name="yourname" required />
         <input type="password" placeholder="Password" name="password" required />
         <button type="submit">Login</button>
       </form>
@@ -364,34 +366,8 @@
 
     <script src="script.js"></script>
     <script>
- document.getElementById('loginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const data = {};
-  formData.forEach((value, key) => data[key] = value);
-
-  const res = await fetch('/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-
-  const result = await res.json();
-
-  if (result.success) {
-
-    // Basic device detection
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      alert("logged in sucessfuly);
-    } else {
-       alert("logged in sucessfuly);
-    }
-  } else {
-    alert('Login failed');
-  }
-});
-
+const name = document.getElementById('name').value;
+document.getElementById('showName'). innerHTML = name;
     </script>
 </body>
 </html>
