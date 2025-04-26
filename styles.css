@@ -361,7 +361,8 @@ a{
     right: 20px;
     top: 15px;
     font-size: 28px;
-    color: #888;
+    color: red;
+      font-weight:bolder;
     cursor: pointer;
   }
   
