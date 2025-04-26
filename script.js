@@ -100,6 +100,20 @@ window.addEventListener('resize', () => {
     slideWidth = images[0].clientWidth;
 });
 
+
+// Select the button and container
+const button = document.getElementById('showCalendarBtn');
+const calendarContainer = document.getElementById('calendarContainer');
+
+// Create calendar when button is clicked
+button.addEventListener('click', function() {
+    // Create an input element of type "date"
+    const calendar = document.createElement('input');
+    calendar.type = 'date';
+    calendar.id = 'bookingDate'; // Optional ID
+    calendarContainer.innerHTML = ''; // Clear previous calendar if any
+    calendarContainer.appendChild(calendar);
+});
 // Your carousel code first...
 
 // Now dark mode based on time with JS only
