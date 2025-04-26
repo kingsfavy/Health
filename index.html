@@ -355,8 +355,8 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
       <formn action="index.html" method="GET">
-        <input type="text" placeholder="Username" id ="name" name="yourname" required />
-        <button type="submit" class="btn2">Login</button>
+        <input type="text" placeholder="Username" id ="name" name="yourname" required /><br><br>
+        <button type="button" class="btn2" onclick="btn()">Login</button>
       </form>
 
     </div>
@@ -365,9 +365,12 @@
 
     <script src="script.js"></script>
     <script>
+        function btn() {
 const name = document.getElementById('name').value;
 document.getElementById('showName').innerHTML = name;
 document.getElementById('showNames').innerHTML = name;
+            alert("logged in successfully");
+        }
     </script>
 </body>
 </html>
