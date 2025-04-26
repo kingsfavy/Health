@@ -7,6 +7,7 @@ import fs from 'fs';
 import crypto from 'crypto';
 import bodyParser from 'body-parser';
 import passport from 'passport';
+import nodemailer from 'nodemailer';
 import LocalStrategy from 'passport-local';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt.js'
