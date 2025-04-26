@@ -210,6 +210,27 @@ a:hover{
     color: rgba(152, 199, 90, 1);
     cursor: pointer;
 }
+
+.carousel {
+    width: 100%;
+    height: 100vh; /* Full screen */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 100% * number of images (3 images here) */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .social-icons{
     width:30px;
     height:30px;
