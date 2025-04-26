@@ -16,6 +16,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+img{
+    filter:saturate(1.5);
+}
 #read{
     display:none;
 color: rgba(0, 102, 153, 1);
