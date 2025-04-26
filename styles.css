@@ -222,6 +222,7 @@ a:hover{
     display: flex;
     width:270%; /* 100% * number of images (3 images here) */
     height: 100%;
+    margin:0 4%;
     transition: transform 2s ease-in-out;
 }
 
