@@ -213,16 +213,16 @@ a:hover{
 
 .carousel {
     width: 100%;
-    height: 100vh; /* Full screen */
+    height: 50vh; /* Full screen */
     overflow: hidden;
     position: relative;
 }
 
 .slides {
     display: flex;
-    width: 300%; /* 100% * number of images (3 images here) */
+    width:270%; /* 100% * number of images (3 images here) */
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 .slides img {
