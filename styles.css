@@ -46,7 +46,7 @@ color: rgba(0, 102, 153, 1);
 .header{
 background-color: #fff;
 padding: 1rem 1rem;
-    color:#000;
+
 }
 .header, .top{
     display:flex;
@@ -62,10 +62,10 @@ padding: 1rem 1rem;
     display:flex;
     gap:2rem;
     padding:0 5% 0 0;
-    color:#000;
+    
 }
 .book{
-color: rgba(57, 192, 147, 0.886);  
+color: rgba(152, 199, 90, 1);
 font-weight: bold;
 font-size: 1.2em;
 cursor:pointer;
@@ -130,19 +130,19 @@ input{
     height:5px;
     border: none;
     border-radius: 25px;
-    background:rgba(57, 192, 147, 0.886);
+    background:rgba(152, 199, 90, 1);
     margin:6px 0;
 }
 
 .btn, .btn2{
-    background-color: rgba(57, 192, 147, 0.886);
+    background-color: rgba(152, 199, 90, 1);
     border: none;
     padding: 1rem 2rem;
     color:#fff;
     border-radius:25px;
 }
 .btn:hover{
-    border: 1px solid  rgba(57, 192, 147, 0.886);
+    border: 1px solid  rgba(152, 199, 90, 1);
     cursor: pointer;
     background: none;
     color:rgba(57, 192, 147, 0.886);
@@ -150,12 +150,12 @@ input{
     font-weight: bolder;
 }
 .pharmacy{
-    color: rgba(57, 192, 147, 0.886);
+    color: rgba(152, 199, 90, 1);
     text-decoration: underline;
 }
 .name{
     font-size: 2.1em;
-    color:green;
+    color:rgba(35, 84, 51, 1);
     font-weight: larger;
     
 }
@@ -172,7 +172,7 @@ ul{
 a:hover{
     text-decoration: underline;
     text-underline-offset: 5px;
-    color: rgba(57, 192, 147, 0.886);
+    color: rgba(152, 199, 90, 1);
     cursor: pointer;
 }
 .social-icons{
