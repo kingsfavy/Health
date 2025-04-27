@@ -22,7 +22,7 @@
 
                 <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
 
-                <p onclick="openModal()" class="book log">Login</p>
+                <p onclick="openModal()" class="book" id="logs">Login</p>
                   <strong><p id="showNames"></p></strong>
             </div>
         </div>
@@ -61,6 +61,7 @@
 
            <div class="mobile" id="nav">
                <strong><p id="showName"></p></strong>
+               <br>
             <ul>
                 
                 <a onclick="window.location.href='#top'" class="navLinks"><li>Home</li></a>
@@ -96,7 +97,7 @@
 
         <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
 
-        <p onclick="openModal()" class="book log">Login</p>
+        <p onclick="openModal()" class="book" id="log">Login</p>
     </div>
 </div>
 </div>
@@ -364,7 +365,8 @@ document.getElementById('showNames').innerHTML = name;
             document.getElementById('showName').style.display = "block";
 document.getElementById('showNames').style.display = "block";
             alert("Welcome" + " " + name);
-            document.getElementsByclassName(".log").style.display = "none";
+            document.getElementById("log").style.display = "none";
+                        document.getElementById("logs").style.display = "none";
             
         }
     </script>
