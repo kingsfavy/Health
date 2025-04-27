@@ -66,6 +66,9 @@
     main{
         padding-top:15rem;
     }
+    .bg-inner{
+        padding:0;
+    }
 }
 
 @media(width:768px){
