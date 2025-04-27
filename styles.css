@@ -11,7 +11,9 @@ body,html{
   /*  background: rgba(242, 255, 252, 1);*/
     background:rgba(255, 255, 255, 1);
 }
-
+#showName, #showNames{
+    display:block;
+}
 .wrapper, .inner-container, .flex{
     display:flex;
     flex-wrap: wrap;
