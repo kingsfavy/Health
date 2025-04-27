@@ -178,6 +178,7 @@ document.getElementById("read").style.display = "block";
 
 const year = new Date().getFullYear();
 document.getElementById("year").innerHTML = year;
+document.getElementById("years").innerHTML = year;
 
       function btn() {
 const name = document.getElementById('name').value;
