@@ -23,7 +23,7 @@
                 <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
 
                 <p onclick="openModal()" class="book" id="logs">Login</p>
-                  <strong><p id="showNames"></p></strong>
+                  <strong><p id="showNames" class="showName"></p></strong>
             </div>
         </div>
         </div>
@@ -60,7 +60,7 @@
            </div>
 
            <div class="mobile" id="nav">
-               <strong><p id="showName"></p></strong>
+               <strong><p id="showName" class="showName"></p></strong>
                <br>
             <ul>
                 
@@ -348,9 +348,10 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
-      <formn action="index.html" method="GET">
-        <input type="text" placeholder="Username" id ="name"  required /><br><br>
-        <button type="button" class="btn2" onclick="btn()">Login</button>
+      <formn id="loginForm">
+            <label for="userId">Full Name </label>
+        <input type="text" id ="userId"  required /><br><br>
+        <button type="submit" class="btn2" onclick="btn()">Login</button>
       </form>
 
     </div>
