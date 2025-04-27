@@ -1,5 +1,6 @@
 
-
+const users = [];
+const userMap = new Map();
 let isMenuOpen = false;
 
 function ham() {
@@ -180,7 +181,7 @@ document.getElementById("read").style.display = "block";
 const year = new Date().getFullYear();
 document.getElementById("year").innerHTML = year;
 
-        function btn() {
+     /*   function btn() {
 const name = document.getElementById('name').value;
 document.getElementById('showName').innerHTML = name;
 document.getElementById('showNames').innerHTML = name;
@@ -190,32 +191,37 @@ document.getElementById('showNames').style.display = "block";
             document.getElementById("log").style.display = "none";
                         document.getElementById("logs").style.display = "none";
             
-        }
+        } */
 
-
-// Users storage
-/*const users = [];
-const usersMap = new Map();
 
 // Add user to both array and map
-function addUser(id, name) {
+function addUser(name) {
+  const id = users.length + 1;  // Automatically assign an ID based on the current count
   const user = { id, name };
   users.push(user);
   usersMap.set(id, user);
 }
 
-// Get user name by ID and display in .showName
-function getUserNameById(id) {
-  const user = usersMap.get(id);
+// Get user name by name and display in .showName
+function getUserNameByName(name) {
+  let user = null;
+  
+  // Check if the user exists
+  for (let u of users) {
+    if (u.name.toLowerCase() === name.toLowerCase()) {
+      user = u;
+      break;
+    }
+  }
+  
   const showNameElement = document.querySelector('.showName');
   
   if (user) {
-    showNameElement.textContent = user.name;
+    showNameElement.textContent = `Welcome back, ${user.name}!`;
   } else {
     // If user doesn't exist, automatically register and display
-    const newName = `User${id}`;  // Create a default name for the new user
-    addUser(id, newName);
-    showNameElement.textContent = `Welcome, ${newName}! (New User)`;
+    addUser(name);
+    showNameElement.textContent = `Welcome, ${name}! (New User)`;
   }
 }
 
@@ -223,7 +229,10 @@ function getUserNameById(id) {
 document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
 
-  const userId = document.getElementById('userId').value;
-  getUserNameById(Number(userId)); */
+  const userName = document.getElementById('userName').value.trim();
+  if (userName) {
+    getUserNameByName(userName);
+  } else {
+    alert('Please enter a name!');
+  }
 });
-
