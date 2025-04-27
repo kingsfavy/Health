@@ -191,3 +191,39 @@ document.getElementById('showNames').style.display = "block";
                         document.getElementById("logs").style.display = "none";
             
         }
+
+
+// Users storage
+const users = [];
+const usersMap = new Map();
+
+// Add user to both array and map
+function addUser(id, name) {
+  const user = { id, name };
+  users.push(user);
+  usersMap.set(id, user);
+}
+
+// Get user name by ID and display in .showName
+function getUserNameById(id) {
+  const user = usersMap.get(id);
+  const showNameElement = document.querySelector('.showName');
+  
+  if (user) {
+    showNameElement.textContent = user.name;
+  } else {
+    // If user doesn't exist, automatically register and display
+    const newName = `User${id}`;  // Create a default name for the new user
+    addUser(id, newName);
+    showNameElement.textContent = `Welcome, ${newName}! (New User)`;
+  }
+}
+
+// Handle form submission
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  const userId = document.getElementById('userId').value;
+  getUserNameById(Number(userId));
+});
+
