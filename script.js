@@ -1,6 +1,6 @@
 
 const users = [];
-const userMap = new Map();
+const usersMap = new Map();
 let isMenuOpen = false;
 
 function ham() {
