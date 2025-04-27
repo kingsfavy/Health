@@ -38,6 +38,10 @@ color: black;
     font-size:2em;
     color: black;
 }
+#calendarContainer{
+    background:#fff;
+}
+
 .wrapper{
     width:100%;
     padding:0.5rem 0;
