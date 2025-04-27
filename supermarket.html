@@ -22,6 +22,8 @@
 
                 <a onclick="window.location.href='/home'"><p class="book desktop">BOOK NOW</p></a>
 
+                <strong><p id="showNames"></p></strong>
+
             </div>
         </div>
         </div>
@@ -58,6 +60,8 @@
            </div>
 
            <div class="mobile" id="nav">
+               <strong><p id="showName"></p></strong>
+               <br>
             <ul>
             
                 <a onclick="window.location.href='#top'" class="navLinks"><li>Home</li></a>
@@ -348,18 +352,28 @@ Our shelves are stocked with trusted brands and locally sourced produce, ensurin
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
-      <form id="loginForm">
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+      <formn action="index.html" method="GET">
+        <input type="text" placeholder="Username" id ="name"  required /><br><br>
+        <button type="button" class="btn2" onclick="btn()">Login</button>
       </form>
-      <br>
-      <p>Don't have an account? <a onclick="window.location.href='signup.html'">Sign up</a></p>
-      <br>
-      <p>Forgot your password? <a onclick="window.location.href='reset-password.html'">Click here</a></p>
+
     </div>
   </div>
 
+
     <script src="script.js"></script>
+    <script>
+        function btn() {
+const name = document.getElementById('name').value;
+document.getElementById('showName').innerHTML = name;
+document.getElementById('showNames').innerHTML = name;
+            document.getElementById('showName').style.display = "block";
+document.getElementById('showNames').style.display = "block";
+            alert("Welcome" + " " + name);
+            document.getElementById("log").style.display = "none";
+                        document.getElementById("logs").style.display = "none";
+            
+        }
+    </script>
 </body>
 </html>
