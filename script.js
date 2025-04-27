@@ -194,7 +194,7 @@ document.getElementById('showNames').style.display = "block";
 
 
 // Users storage
-const users = [];
+/*const users = [];
 const usersMap = new Map();
 
 // Add user to both array and map
@@ -224,6 +224,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   event.preventDefault(); // Prevent form submission
 
   const userId = document.getElementById('userId').value;
-  getUserNameById(Number(userId));
+  getUserNameById(Number(userId)); */
 });
 
