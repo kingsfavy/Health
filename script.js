@@ -1,6 +1,4 @@
 
-const users = [];
-const usersMap = new Map();
 let isMenuOpen = false;
 
 function ham() {
@@ -194,12 +192,14 @@ document.getElementById('showNames').style.display = "block";
         } */
 
 
-// Add user to both array and map
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Add user to localStorage
 function addUser(name) {
-  const id = users.length + 1;  // Automatically assign an ID based on the current count
+  const id = users.length + 1;  // Automatically assign an ID based on current count
   const user = { id, name };
   users.push(user);
-  usersMap.set(id, user);
+  localStorage.setItem('users', JSON.stringify(users));  // Save to localStorage
 }
 
 // Get user name by name and display in .showName
@@ -213,15 +213,21 @@ function getUserNameByName(name) {
       break;
     }
   }
-  
-  const showNameElement = document.querySelector('.showName');
+
+  // Get all elements with class "showName"
+  const showNameElements = document.querySelectorAll('.showName');
   
   if (user) {
-    showNameElement.textContent = `Welcome back, ${user.name}!`;
+    // Display username in all elements with class "showName"
+    showNameElements.forEach(element => {
+      element.textContent = `Welcome back, ${user.name}!`;
+    });
   } else {
     // If user doesn't exist, automatically register and display
     addUser(name);
-    showNameElement.textContent = `Welcome, ${name}! (New User)`;
+    showNameElements.forEach(element => {
+      element.textContent = `Welcome, ${name}! (New User)`;
+    });
   }
 }
 
