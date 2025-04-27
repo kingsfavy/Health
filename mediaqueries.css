@@ -64,8 +64,7 @@
         background:none;
     }
     #read{
-        display:flex;
-        justify-content:center;
+        display:none;
     }
     .contents p{
         letter-spacing: 2px;
