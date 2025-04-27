@@ -99,8 +99,7 @@ text-decoration: underline;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:green;
-    padding:1rem 0;
+    padding:1.5rem 0;
  
 }
 .doc{
@@ -109,20 +108,13 @@ text-decoration: underline;
     opacity:0.5;
 }
 
-.bg-bg {
-    height: 300px; /* Optional: makes sure it covers the full screen height */
-    width:100%;
-    padding:1rem 0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 .bg-inner{
     width:100%;
     height:auto;
     opacity:1;
     position:absolute;
     z-index:1;
+    padding:1.5rem 0;
 }
 
 .icon{
