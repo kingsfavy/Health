@@ -60,6 +60,13 @@
     .desktop{
         display:block;
     }
+    #calendarContainer{
+        background:none;
+    }
+    #read{
+        display:flex;
+        justify-content:center;
+    }
     .contents p{
         letter-spacing: 2px;
     }
