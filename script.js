@@ -180,7 +180,7 @@ document.getElementById("read").style.display = "block";
 const year = new Date().getFullYear();
 document.getElementById("year").innerHTML = year;
 
-      /*  function btn() {
+        function btn() {
 const name = document.getElementById('name').value;
 document.getElementById('showName').innerHTML = name;
 document.getElementById('showNames').innerHTML = name;
@@ -190,7 +190,7 @@ document.getElementById('showNames').style.display = "block";
             document.getElementById("log").style.display = "none";
                         document.getElementById("logs").style.display = "none";
             
-        }. */
+        }
 
 
 // Users storage
