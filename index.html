@@ -348,10 +348,9 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Login to Your Account</h2>
-      <formn id="loginForm">
-            <label for="userName">Full Name </label>
-        <input type="text" id ="userName"  required /><br><br>
-        <button type="submit" class="btn2">Login</button>
+      <formn action="index.html" method="GET">
+        <input type="text" placeholder="Username" id ="name"  required /><br><br>
+        <button type="button" class="btn2" onclick="btn()">Login</button>
       </form>
 
     </div>
@@ -359,58 +358,6 @@
 
 
     <script src="script.js"></script>
-    <script>
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-
-// Add user to localStorage
-function addUser(name) {
-  const id = users.length + 1;  // Automatically assign an ID based on current count
-  const user = { id, name };
-  users.push(user);
-  localStorage.setItem('users', JSON.stringify(users));  // Save to localStorage
-}
-
-// Get user name by name and display in .showName
-function getUserNameByName(name) {
-  let user = null;
   
-  // Check if the user exists
-  for (let u of users) {
-    if (u.name.toLowerCase() === name.toLowerCase()) {
-      user = u;
-      break;
-    }
-  }
-
-  // Get all elements with class "showName"
-  const showNameElements = document.querySelectorAll('.showName');
-  
-  if (user) {
-    // Display username in all elements with class "showName"
-    showNameElements.forEach(element => {
-      element.textContent = `Welcome back, ${user.name}!`;
-    });
-  } else {
-    // If user doesn't exist, automatically register and display
-    addUser(name);
-    showNameElements.forEach(element => {
-      element.textContent = `Welcome, ${name}! (New User)`;
-    });
-  }
-}
-
-// Handle form submission
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
-
-  const userName = document.getElementById('userName').value.trim();
-  if (userName) {
-    getUserNameByName(userName);
-  } else {
-    alert('Please enter a name!');
-  }
-});
-
-    </script>
 </body>
 </html>
