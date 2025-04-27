@@ -13,6 +13,7 @@ body,html{
 }
 #showName, #showNames{
     display:none;
+    color:rgba(35, 84, 51, 1);
 }
 .wrapper, .inner-container, .flex{
     display:flex;
@@ -134,7 +135,7 @@ text-decoration: underline;
 .icons{
     width:100px;
     height: 100px;
-    color: rgb(9, 49, 119);
+color:rgba(35, 84, 51, 1);
     font-size: 21px;
     font-weight: lighter;
 }
