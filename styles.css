@@ -88,6 +88,10 @@ font-size: 1.2em;
 cursor:pointer;
 text-decoration: underline;
 }
+.li{
+    color: rgba(152, 199, 90, 1);
+font-weight: bold;
+}
 .tel{
     color: rgba(35, 84, 51, 1);
 }
