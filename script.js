@@ -140,7 +140,7 @@ showCalendarBtn.addEventListener('click', function() {
 
             setTimeout(() => {
                 // Update booking result
-                bookingResult.textContent = `Booking confirmed for: ${selectedDate}`;
+                bookingResult.textContent = `You booked an appointment for Healthrite pharmacy on  ${selectedDate}`;
                 
                 // Animate: fade in and bounce back
                 bookingResult.style.opacity = '1';
@@ -189,6 +189,3 @@ document.getElementById('showNames').style.display = "block";
                         document.getElementById("logs").style.display = "none";
             
         } 
-
-
-
