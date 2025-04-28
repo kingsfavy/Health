@@ -184,7 +184,10 @@ input{
     height:35px;
     border-radius: 8px;
     background: none;
-    border:none;
+    border:1px solid #000;
+    padding:4px;
+    
+    
 }
 
 .ham{
