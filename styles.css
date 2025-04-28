@@ -303,6 +303,10 @@ main{
     height:auto;
     gap:5.5rem;
 }
+.company-img{
+    width:200px;
+    height:200px;
+}
 .services{
     font-weight:  larger;
     font-size: 1.5rem;
@@ -458,6 +462,10 @@ a{
   animation: fade-right 1s ease-in;
 }
 
+.active.center {
+  animation: fade-right 1s ease-in;
+}
+
 @keyframes fade-left {
   0% {
     transform: translateY(100px);
@@ -465,6 +473,28 @@ a{
   }
   100% {
     transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-5px);
+    opacity: 1;
+  }
+}
+
+@keyframes center {
+  0% {
+    transform: translateY(2px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-2px);
     opacity: 1;
   }
 }
