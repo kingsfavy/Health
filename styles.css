@@ -30,7 +30,7 @@ body{
     object-fit: cover;
 }*/
 #showName, #showNames{
-    display:none;
+    display:block;
     color:rgba(35, 84, 51, 1);
     font-size:1.5em;
     font-weight:bolder;
