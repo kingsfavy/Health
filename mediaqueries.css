@@ -11,7 +11,10 @@
     .name{
         font-size: 1.2em;
     }
-
+    .company-img{
+    width:100%;
+    height:auto;
+}
     .header{
         padding:1rem 1rem;
     }
@@ -48,7 +51,6 @@
    
     ul{
         display:flex;
-        ;
         flex-wrap: wrap;
     }
     .space{
@@ -81,6 +83,14 @@
     }
     #read{
         display:none;
+    }
+    .company-img{
+    width:50%;
+    height:auto;
+}
+    .text-con{
+        width:50%;
+        height:auto;
     }
     .contents p{
         letter-spacing: 2px;
