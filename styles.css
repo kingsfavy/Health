@@ -11,6 +11,26 @@ body,html{
   /*  background: rgba(242, 255, 252, 1);*/
     background:rgba(255, 255, 255, 1);
 }
+    .carousel {
+    width: 100%;
+    height: 50vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width:100%; 
+    height: 100%;
+    transition: transform 2s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
 #showName, #showNames{
     display:none;
     color:rgba(35, 84, 51, 1);
