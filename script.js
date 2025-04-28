@@ -54,40 +54,7 @@ function openModal() {
     document.getElementById("mainContent").classList.remove("blur");
   }
   
-  window.onclick = function(event) {
-    const modal = document.getElementById("loginModal");
-    if (event.target === modal) {
-      closeModal();
-    }
-  }
 
-const slides = document.querySelector('.slides');
-const images = document.querySelectorAll('.slides img');
-
-// Clone the first image and add it to the end
-const firstClone = images[0].cloneNode(true);
-slides.appendChild(firstClone);
-
-let index = 0;
-let slideWidth = images[0].clientWidth;
-
-function moveToNextSlide() {
-    index++;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    slides.style.transition = 'transform 0.5s ease-in-out';
-
-    // When we reach the clone, reset back to real first slide
-    if (index === images.length) {
-        setTimeout(() => {
-            slides.style.transition = 'none'; // Remove transition
-            index = 0;
-            slides.style.transform = `translateX(0)`;
-        }, 500); // Wait for the slide animation to finish
-    }
-}
-
-// Move every 3 seconds
-setInterval(moveToNextSlide, 5000);
 
 const showCalendarBtn = document.getElementById('showCalendarBtn');
 const calendarContainer = document.getElementById('calendarContainer');
