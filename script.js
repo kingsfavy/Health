@@ -133,10 +133,7 @@ showCalendarBtn.addEventListener('click', function() {
 });
 
 
-// Adjust if window resizes
-window.addEventListener('resize', () => {
-    slideWidth = images[0].clientWidth;
-});
+
 
 function read(){
 document.getElementById("read").style.display = "block";
@@ -150,7 +147,6 @@ document.getElementById("years").innerHTML = years;
 
 
   // Change image automatically every 3 seconds
-  setInterval(nextImage, 3000);
       function btn() {
 const name = document.getElementById('name').value;
 document.getElementById('showName').innerHTML = name;
