@@ -73,6 +73,20 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 
+// Smooth scrolling
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
 const showCalendarBtn = document.getElementById('showCalendarBtn');
 const calendarContainer = document.getElementById('calendarContainer');
 const bookingResult = document.getElementById('bookingResult');
