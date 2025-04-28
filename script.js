@@ -188,8 +188,7 @@ document.getElementById('showNames').style.display = "block";
             document.getElementById("log").style.display = "none";
                         document.getElementById("logs").style.display = "none";
             
-        } */
-
+        }
   function btn() {
       const nameInput = document.getElementById('name').value;
 
@@ -210,7 +209,7 @@ document.getElementById('showNames').style.display = "block";
       }
     }
 
-    // Optional: If you want to automatically check if there's a saved name on page load:
+
     window.onload = function() {
       const storedName = localStorage.getItem('fullName');
       if (storedName) {
@@ -219,4 +218,4 @@ document.getElementById('showNames').style.display = "block";
         document.getElementById('showName').textContent = storedName;
         document.getElementById('showNames').textContent = storedName;
       }
-    }
+    }*/
