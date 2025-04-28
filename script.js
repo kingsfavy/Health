@@ -178,7 +178,7 @@ document.getElementById("years").innerHTML = years;
 
 
   // Change image automatically every 3 seconds
-      function btn() {
+      /*function btn() {
 const name = document.getElementById('name').value;
 document.getElementById('showName').innerHTML = name;
 document.getElementById('showNames').innerHTML = name;
@@ -188,4 +188,35 @@ document.getElementById('showNames').style.display = "block";
             document.getElementById("log").style.display = "none";
                         document.getElementById("logs").style.display = "none";
             
-        } 
+        } */
+
+  function btn() {
+      const nameInput = document.getElementById('name').value;
+
+      if (nameInput) {
+        // Save name to localStorage
+        localStorage.setItem('fullName', nameInput);
+
+        // Retrieve name from localStorage
+        const storedName = localStorage.getItem('fullName');
+
+        // Hide the 'log' and 'logs' paragraphs
+        document.getElementById('log').style.display = 'none';
+        document.getElementById('logs').style.display = 'none';
+
+        // Display the name in 'showName' and 'showNames' paragraphs
+        document.getElementById('showName').textContent = storedName;
+        document.getElementById('showNames').textContent = storedName;
+      }
+    }
+
+    // Optional: If you want to automatically check if there's a saved name on page load:
+    window.onload = function() {
+      const storedName = localStorage.getItem('fullName');
+      if (storedName) {
+        document.getElementById('log').style.display = 'none';
+        document.getElementById('logs').style.display = 'none';
+        document.getElementById('showName').textContent = storedName;
+        document.getElementById('showNames').textContent = storedName;
+      }
+    }
