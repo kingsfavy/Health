@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthrite Pharmacy</title>
+    <title>Healthrite </title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
@@ -37,8 +37,8 @@
       <h2 class="name">HEALTHRITE</h2>
            
     <div style="display:flex;justify-content:flex-start;align-items: center;gap:2rem;margin:20px 0;text-decoration: underline;cursor:pointer;color:#fff;">
-        <p class="pharmacy" onclick="window.location.href='index.html'">Pharmacy</p>
-        <p onclick="window.location.href='supermarket.html'" class="super">Supermarket</p>
+        <p class="pharmacy" onclick="pharmacy()">Pharmacy</p>
+        <p onclick="supermarket()" class="super">Supermarket</p>
     </div>
             </div>
 
@@ -102,6 +102,7 @@
 </div>
 
     <main id="mainContent">
+        <div style="width:100%; id="pharmacy">
   <div class="bg">
       <img src = "doc.jpeg" class="logo-img doc">
       <div class="bg-inner">
@@ -381,7 +382,7 @@
          </div>-->
         
 
-         <div style="width:100%;height:auto; >
+         <div style="width:100%;height:auto; id="supermarket" >
             <div class="wrapper">
     <div class="slides ">
         <img src="one.jpeg" alt="Image 1" class="reveal one">
@@ -411,8 +412,76 @@
             </div>
              </div>
               </section>
+    </div>
+        <br>
+<div style="width:100%;">
+    <div class="bg">
+      <img src = "happiness.jpeg" class="logo-img doc">
+      <div class="bg-inner">
+    <div class="wrapper">
+            <div class="contents">
+                <h1 class="walk view">DAILY ESSENTIALS</h1>
+            </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <p class="view">FOR ADULTS & CHILDREN</p>
+        </div>
+</div>
+<div class="wrapper">
+    <div class="container">
+        <p class="view">Monday - Saturday: 7:00am – 7:30pm </p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="container">
+        <p class="view">Sunday: 7:00am – 4:30pm</p>
+    </div>
+</div>
+          <div class="wrapper">
+    <div class="container">
+        <button type="button" class="btn2">Shop Now</button>
+    </div>
+</div>
+
+         </div>
+  </div>
+
+        <div class="space"></div>
+           <div class="wrapper">
+            <div class="container">
+                <p> At Healthrite Supermarket, we believe that healthy living starts with the right choices.
+We are proud to offer a wide range of fresh groceries, organic products, household essentials, and personal care items — all carefully selected to support your well-being.</p>
+            </div>
+        </div>
+        <br>
+                   <div class="wrapper">
+            <div class="container">
+                <p>Whether you are shopping for your family, planning your weekly meals, or looking for specialty health products, Healthrite is your one-stop destination.
+Our shelves are stocked with trusted brands and locally sourced produce, ensuring you always find the best quality at the best prices. </p>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <div class="contents">
+                <p class="age" id="product">Products</p>
+            </div>
+        </div>
+
         <br>
 
+        <div class="carousel" id="services">
+    <div class="slides">
+        <img src="first.jpeg" alt="Image 1">
+        <img src="second.jpeg" alt="Image 2">
+        <img src="third.jpeg" alt="Image 3">
+         <img src="fourth.jpeg" alt="Image 4">
+        <!-- Add more images if you want -->
+    </div>
+</div>
+
+
+</div>
  <section class="reveal fade-left">
 <div clas="bottom">
 <div class="wrapper">
