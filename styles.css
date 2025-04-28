@@ -44,6 +44,12 @@ a{
     justify-content: center;
     align-items: center;
 }
+.back-top{
+    bottom:2%;
+    position:fixed;
+    z-index:100;
+    left:5%;
+}
 img{
     filter:saturate(1.5);
 }
