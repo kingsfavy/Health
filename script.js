@@ -181,35 +181,6 @@ document.getElementById("year").innerHTML = year;
 const years = new Date().getFullYear();
 document.getElementById("years").innerHTML = years;
 
- const images = [
-    'one.jpeg',
-  'two.jpeg',
-     'three.jpeg',
-     'four.jpeg'
-  ];
-
-  const carousel = document.getElementById('carousel');
-  let currentIndex = 0;
-
-  // Create img elements dynamically
-  images.forEach((src, index) => {
-    const img = document.createElement('img');
-    img.src = src;
-    if (index === 0) img.classList.add('active');
-    carousel.appendChild(img);
-  });
-
-  const allImages = carousel.querySelectorAll('img');
-
-  function showImage(index) {
-    allImages.forEach(img => img.classList.remove('active'));
-    allImages[index].classList.add('active');
-  }
-
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }
 
   // Change image automatically every 3 seconds
   setInterval(nextImage, 3000);
