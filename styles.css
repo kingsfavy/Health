@@ -462,8 +462,8 @@ a{
   animation: fade-right 1s ease-in;
 }
 
-.active.center {
-  animation: fade-right 1s ease-in;
+.active.fade-center {
+  animation: fade-center 1s ease-in;
 }
 
 @keyframes fade-left {
@@ -488,7 +488,7 @@ a{
   }
 }
 
-@keyframes center {
+@keyframes fade-center {
   0% {
     transform: translateY(2px);
     opacity: 0;
