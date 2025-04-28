@@ -23,6 +23,7 @@
     width:100%; /* 100% * number of images (3 images here) */
     height: 100%;
     justify-content:center;
+          margin:0 20px;  
     }
 
     .slides img{
