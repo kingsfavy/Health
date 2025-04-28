@@ -86,7 +86,7 @@
     }
       .company-img{
     width:95%;
-    height:300px;
+    min-height:100vh;
 }
     .text-con{
         width:50%;
