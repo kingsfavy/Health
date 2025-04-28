@@ -303,10 +303,7 @@ main{
     height:auto;
     gap:5.5rem;
 }
-.company-img{
-    width:200px;
-    height:200px;
-}
+
 .services{
     font-weight:  larger;
     font-size: 1.5rem;
@@ -447,7 +444,7 @@ a{
 
 .reveal {
   position: relative;
-  opacity: 1;
+  opacity: 0;
 }
 
 .reveal.active {
