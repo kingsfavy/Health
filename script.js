@@ -208,7 +208,15 @@ document.getElementById("year").innerHTML = year;
 const years = new Date().getFullYear();
 document.getElementById("years").innerHTML = years;
 
+function supermarket(){
+    document.getElementById("supermarket").style.display="block";
+     document.getElementById("pharmacy").style.display="none";
+}
 
+function pharmacy(){
+     document.getElementById("supermarket").style.display="none";
+     document.getElementById("pharmacy").style.display="block";
+}
   // Change image automatically every 3 seconds
       /*function btn() {
 const name = document.getElementById('name').value;
