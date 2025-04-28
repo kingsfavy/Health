@@ -17,9 +17,9 @@ body{
     position: relative;
 }
 
-/*.slides {
+.slides {
     display: flex;
-    width:100%; 
+    
     height: 100%;
     transition: transform 2s ease-in-out;
 }
@@ -28,8 +28,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}*/
-  
+}
 #showName, #showNames{
     display:none;
     color:rgba(35, 84, 51, 1);
