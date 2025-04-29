@@ -597,6 +597,19 @@ Our shelves are stocked with trusted brands and locally sourced produce, ensurin
       return "Good evening ";
     }
   }
+
+    function checkConnection() {
+      const loader = document.getElementById('no-internet-loader');
+      if (navigator.onLine) {
+        loader.style.display = 'none';
+      } else {
+        loader.style.display = 'flex';
+      }
+    }
+
+    window.addEventListener('load', checkConnection);
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('offline', checkConnection);
 </script>
 
     <script src="script.js"></script>
