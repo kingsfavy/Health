@@ -462,28 +462,28 @@ a{
 }
 
 .active.fade-left {
-  animation: fade-left 1s ease-in;
+  animation: fade-left alternate 0.5s ease-in-out both;
 }
 
 .active.one {
-  animation: center 1s ease-in 1s 0s both;
+  animation: center alternate 0.5s ease-in-out  1s both;
 }
 .active.two {
-  animation: center 1s ease-in 1s 1s both;
+  animation: center  alternate 0.5s ease-in-out 1.5s 1s both;
 }
 .active.three {
-  animation: center 1s ease-in 1s 2s both;
+  animation: center alternate 0.5s ease-in-out 1s 2.5s both;
 }
 .active.forth {
-  animation: center 1s ease-in 1s 3s both;
+  animation: center alternate 0.5s ease-in-out 1s 3.5s both;
 }
 .active.fifth {
-  animation: center 1s ease-in 1s 4s both;
+  animation: center alternate 0.5s ease-in-out 1s 4.5s both;
 }
 
 @keyframes fade-left {
   0% {
-    transform: translateY(100px);
+    transform: translateY(50px);
     opacity: 0;
   }
   100% {
@@ -495,11 +495,11 @@ a{
 
 @keyframes center {
   0% {
-    transform: translateY(5px);
+    transform: translateY(-10px);
     opacity: 0;
   }
   100% {
-    transform: translateY(5px);
+    transform: translateY(10px);
     opacity: 1;
   }
 }
