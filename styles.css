@@ -469,25 +469,25 @@ a{
   animation: center alternate 0.5s ease-in-out  1s both;
 }
 .active.two {
-  animation: center  alternate 0.5s ease-in-out 1.5s 1s both;
+  animation: center  alternate 0.5s ease-in-out 1.5s both;
 }
 .active.three {
-  animation: center alternate 0.5s ease-in-out 1s 2.5s both;
+  animation: center alternate 0.5s ease-in-out  2s both;
 }
 .active.forth {
-  animation: center alternate 0.5s ease-in-out 1s 3.5s both;
+  animation: center alternate 0.5s ease-in-out 2.5s both;
 }
 .active.fifth {
-  animation: center alternate 0.5s ease-in-out 1s 4.5s both;
+  animation: center alternate 0.5s ease-in-out  3s both;
 }
 
 @keyframes fade-left {
   0% {
-    transform: translateY(50px);
+    transform: translateY(-15px);
     opacity: 0;
   }
   100% {
-    transform: translateY(5px);
+    transform: translateY(15px);
     opacity: 1;
   }
 }
@@ -495,11 +495,11 @@ a{
 
 @keyframes center {
   0% {
-    transform: translateY(-10px);
+    transform: translateX(-15px);
     opacity: 0;
   }
   100% {
-    transform: translateY(10px);
+    transform: translateX(15px);
     opacity: 1;
   }
 }
