@@ -495,11 +495,11 @@ a{
 
 @keyframes center {
   0% {
-    transform: translateX(-15px);
+    transform: translateX(-5px);
     opacity: 0;
   }
   100% {
-    transform: translateX(15px);
+    transform: translateX(5px);
     opacity: 1;
   }
 }
