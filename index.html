@@ -109,7 +109,11 @@
 
     <main id="mainContent">
         <div class="wrapper">
+            <div class="contents">
+                <div class="age">
   <p id="greeting"></p>
+        </div>
+        </div>
         </div>
         <br>
         <div style="width:100%; id="pharmacy">
@@ -562,10 +566,22 @@ Our shelves are stocked with trusted brands and locally sourced produce, ensurin
 
     </div>
   </div>
+<script>
+      document.getElementById("greeting").innerText = getGreeting();
 
+  function getGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
 
-   
-
+    if (hour < 12) {
+      return "Good morning ";
+    } else if (hour < 18) {
+      return "Good afternoon ";
+    } else {
+      return "Good evening ";
+    }
+  }
+</script>
 
     <script src="script.js"></script>
   
