@@ -219,22 +219,6 @@ function pharmacy(){
 }
 
 
-  document.getElementById("greeting").innerText = getGreeting();
-
-  function getGreeting() {
-    const now = new Date();
-    const hour = now.getHours();
-
-    if (hour < 12) {
-      return "Good morning! ";
-    } else if (hour < 18) {
-      return "Good afternoon! ";
-    } else {
-      return "Good evening! ";
-    }
-  }
-
-
   // Change image automatically every 3 seconds
       /*function btn() {
 const name = document.getElementById('name').value;
