@@ -218,6 +218,18 @@ function pharmacy(){
      document.getElementById("pharmacy").style.display="block";
 }
 
+function checkConnection() {
+      const loader = document.getElementById('no-internet-loader');
+      if (navigator.onLine) {
+        loader.style.display = 'none';
+      } else {
+        loader.style.display = 'flex';
+      }
+    }
+
+    window.addEventListener('load', checkConnection);
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('offline', checkConnection);
 
   // Change image automatically every 3 seconds
       /*function btn() {
